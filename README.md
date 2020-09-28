@@ -110,7 +110,6 @@ The shapwaterfall package requires the following python packages:
 	from sklearn.ensemble import RandomForestClassifier
 	from sklearn.metrics import roc_auc_score
 	from sklearn.model_selection import train_test_split
-	import shapwaterfall
 	import shap
 	import matplotlib.pyplot as plt
 	import waterfall_chart
