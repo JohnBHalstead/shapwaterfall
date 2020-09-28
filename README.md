@@ -1,4 +1,3 @@
-# shapwaterfall
 **Install**
 
 Using pip (recommended)
@@ -31,6 +30,16 @@ ShapWaterFall(*clf, X_tng, X_val, ref1, ref2, num_features*)
 - *ref1 and ref2*: the first and second reference, observation, client, or customer under study. Can either be a string or an integer. If the column data is a string, use "ref1" and "ref2. Otherwise, use an integer, such as 4 or 107. 
 - *num_features*: the number of important features that describe the local interpretability between to the two observations.
 
+**Dependent Packages**
+
+The shapwaterfall package requires the following python packages:
+
+	import pandas as pd
+	import numpy as np
+	import shap
+	import matplotlib.pyplot as plt
+	import waterfall_chart
+
 **Examples**
 
 **Random Forest on WI Breast Cancer Data**
@@ -42,7 +51,10 @@ ShapWaterFall(*clf, X_tng, X_val, ref1, ref2, num_features*)
 	from sklearn.datasets import load_breast_cancer
 	from sklearn.ensemble import RandomForestClassifier
 	from sklearn.metrics import roc_auc_score
-	from sklearn.model_selection import train_test_split, RandomizedSearchCV
+	from sklearn.model_selection import train_test_split
+	import shap
+	import matplotlib.pyplot as plt
+	import waterfall_chart
 	import shapwaterfall
 
 	# models
@@ -97,7 +109,11 @@ ShapWaterFall(*clf, X_tng, X_val, ref1, ref2, num_features*)
 	from sklearn.datasets import load_breast_cancer
 	from sklearn.ensemble import RandomForestClassifier
 	from sklearn.metrics import roc_auc_score
-	from sklearn.model_selection import train_test_split, RandomizedSearchCV
+	from sklearn.model_selection import train_test_split
+	import shapwaterfall
+	import shap
+	import matplotlib.pyplot as plt
+	import waterfall_chart
 	import shapwaterfall
 
 	# models
