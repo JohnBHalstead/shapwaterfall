@@ -1,4 +1,4 @@
-# v 0.1.3 Oct 1 2020
+# v 0.1.4 Oct 1 2020
 
 import pandas as pd
 import numpy as np
@@ -49,7 +49,7 @@ class shapwaterfall:
         data_for_prediction = pd.concat(frames)
         data_for_prediction = pd.DataFrame(data_for_prediction)
         feature_names = data_for_prediction.columns.values
-        shap_values = explainer.shap_values(data_for_prediction)
+        shap_values = explainer.shap_values(data_for_prediction, check_additivity=False)
         Feat_contrib = pd.DataFrame(list(map(np.ravel, shap_values[1])), columns=feature_names)
         counter1 = len(Feat_contrib.columns)
         Feat_contrib['base_line_diff'] = Feat_contrib.sum(axis=1)
