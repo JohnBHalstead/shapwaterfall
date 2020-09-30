@@ -20,7 +20,7 @@ The package requires a tree classifier, training data, validation/test/scoring d
 
 **Command**
 
-ShapWaterFall(*clf, X_tng, X_val, ref1, ref2, num_features*)
+shapwf(*clf, X_tng, X_val, ref1, ref2, num_features*)
 
 **Required**
 
@@ -93,12 +93,12 @@ The shapwaterfall package requires the following python packages:
 	print(X_val.shape) # (188, 31)
 
 	# Use Case 1
-	ShapWaterFall(clf, X_tng, X_val, 5, 100, 5)
-	ShapWaterFall(clf, X_tng, X_val, 100, 5, 7)
+	shapwf(clf, X_tng, X_val, 5, 100, 5)
+	shapwf(clf, X_tng, X_val, 100, 5, 7)
 
 	# Use Case 2
-	ShapWaterFall(clf, X_tng, X_val, 36, 94, 5)
-	ShapWaterFall(clf, X_tng, X_val, 94, 36, 7)
+	shapwf(clf, X_tng, X_val, 36, 94, 5)
+	shapwf(clf, X_tng, X_val, 94, 36, 7)
 	
 **Random Forest on UCI House Vote Data**
 
@@ -151,12 +151,12 @@ The shapwaterfall package requires the following python packages:
 	print(X_val.shape)
 
 	# Use Case 3
-	ShapWaterFall(clf, X_tng, X_val, 78, 387, 5)
-	ShapWaterFall(clf, X_tng, X_val, 387, 78, 7)
+	shapwf(clf, X_tng, X_val, 78, 387, 5)
+	shapwf(clf, X_tng, X_val, 387, 78, 7)
 
 	# Use Case 4
-	ShapWaterFall(clf, X_tng, X_val, 253, 157, 5)
-	ShapWaterFall(clf, X_tng, X_val, 157, 253, 7)
+	shapwf(clf, X_tng, X_val, 253, 157, 5)
+	shapwf(clf, X_tng, X_val, 157, 253, 7)
 
 **Authors**
 
