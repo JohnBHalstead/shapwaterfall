@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="shapwaterfall",     
-    version="0.1.2",
+    version="0.1.4",
     author="John Halstead",
     author_email="jhalstead@vmware.com",
     description="A SHAP Waterfall Chart interpreting local differences between observations",
