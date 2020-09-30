@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="shapwaterfall",     
-    version="0.1.1",
+    version="0.1.2",
     author="John Halstead",
     author_email="jhalstead@vmware.com",
     description="A SHAP Waterfall Chart interpreting local differences between observations",
@@ -14,7 +14,7 @@ setuptools.setup(
     url="https://github.com/JohnBHalstead/shapwaterfall",
     install_requires=[            
           'shap',
-          'waterfall_chart',
+          'waterfallcharts',
           'numpy',
           'matplotlib',
           'pandas'
