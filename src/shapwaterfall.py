@@ -1,4 +1,4 @@
-# v 0.1.0 Oct 1 2020
+# v 0.1.1 Oct 1 2020
 
 class shapwaterfall:
 
