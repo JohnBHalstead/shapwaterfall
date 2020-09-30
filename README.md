@@ -20,7 +20,7 @@ The package requires a tree classifier, training data, validation/test/scoring d
 
 **Command**
 
-shapwf(*clf, X_tng, X_val, ref1, ref2, num_features*)
+shapwaterfall(*clf, X_tng, X_val, ref1, ref2, num_features*)
 
 **Required**
 
@@ -55,7 +55,7 @@ The shapwaterfall package requires the following python packages:
 	import shap
 	import matplotlib.pyplot as plt
 	import waterfall_chart
-	import shapwaterfall
+	from shapwaterfall import shapwaterfall
 
 	# models
 	rf_clf = RandomForestClassifier(n_estimators=1666, max_features="auto", min_samples_split=2, min_samples_leaf=2,
@@ -93,12 +93,12 @@ The shapwaterfall package requires the following python packages:
 	print(X_val.shape) # (188, 31)
 
 	# Use Case 1
-	shapwf(clf, X_tng, X_val, 5, 100, 5)
-	shapwf(clf, X_tng, X_val, 100, 5, 7)
+	shapwaterfall(clf, X_tng, X_val, 5, 100, 5)
+	shapwaterfall(clf, X_tng, X_val, 100, 5, 7)
 
 	# Use Case 2
-	shapwf(clf, X_tng, X_val, 36, 94, 5)
-	shapwf(clf, X_tng, X_val, 94, 36, 7)
+	shapwaterfall(clf, X_tng, X_val, 36, 94, 5)
+	shapwaterfall(clf, X_tng, X_val, 94, 36, 7)
 	
 **Random Forest on UCI House Vote Data**
 
@@ -113,7 +113,7 @@ The shapwaterfall package requires the following python packages:
 	import shap
 	import matplotlib.pyplot as plt
 	import waterfall_chart
-	import shapwaterfall
+	from shapwaterfall import shapwaterfall
 
 	# models
 	rf_clf = RandomForestClassifier()
@@ -151,12 +151,12 @@ The shapwaterfall package requires the following python packages:
 	print(X_val.shape)
 
 	# Use Case 3
-	shapwf(clf, X_tng, X_val, 78, 387, 5)
-	shapwf(clf, X_tng, X_val, 387, 78, 7)
+	shapwaterfall(clf, X_tng, X_val, 78, 387, 5)
+	shapwaterfall(clf, X_tng, X_val, 387, 78, 7)
 
 	# Use Case 4
-	shapwf(clf, X_tng, X_val, 253, 157, 5)
-	shapwf(clf, X_tng, X_val, 157, 253, 7)
+	shapwaterfall(clf, X_tng, X_val, 253, 157, 5)
+	shapwaterfall(clf, X_tng, X_val, 157, 253, 7)
 
 **Authors**
 
