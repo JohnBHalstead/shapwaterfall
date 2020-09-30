@@ -1,11 +1,20 @@
-# v 0.1.2 Oct 1 2020
+# v 0.1.3 Oct 1 2020
+
+import pandas as pd
+import numpy as np
+import shap
+import matplotlib.pyplot as plt
+import waterfall_chart
 
 class shapwaterfall:
 
-    def __init__(self):
-        pass;
-
-    def shapwf(self, Model, X_tng, X_sc, ref1, ref2, num_feature):
+    def __init__(self, Model, X_tng, X_sc, ref1, ref2, num_feature=5):
+        self.Model = Model
+        self.X_tng = X_tng
+        self.X_sc = X_sc
+        self.ref1 = ref1
+        self.ref2 = ref2
+        self.num_feature = num_feature
 
     # label names
         clients_to_show = [ref1, ref2]
@@ -46,8 +55,7 @@ class shapwaterfall:
         Feat_contrib['base_line_diff'] = Feat_contrib.sum(axis=1)
         Feat_contrib['prediction'] = Model.predict_proba(data_for_prediction)[:, 1]
         Feat_contrib['baseline'] = Feat_contrib.prediction - Feat_contrib.base_line_diff
-        diff_df = pd.DataFrame(
-        {'features': Feat_contrib.diff().iloc[1, :].index, 'contrib': Feat_contrib.diff().iloc[1, :].values})[
+        diff_df = pd.DataFrame( {'features': Feat_contrib.diff().iloc[1, :].index, 'contrib': Feat_contrib.diff().iloc[1, :].values})[
               :counter1].sort_values(by='contrib', ascending=False).reset_index(drop=True)
 
     # Waterfall Chart
