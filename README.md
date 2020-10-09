@@ -8,7 +8,7 @@ Using pip (recommended)
 
 Many times when VMware Data Science Teams present their Machine Learning models' propensity to buy scores (estimated probabilities) to stakeholders, stakeholders ask why a customer's propensity to buy is higher than the other customer. The stakeholder's question was our primary motivation. 
 
-We were further concerned with recent algorithm transparency language in the EU's General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA). Although the "right to explanation" is not necessarily clear, our desire is to act in good faith by providing local explainability and interpretability between two references, observations, clients, and customers.
+We were further concerned with recent algorithm transparency language in the EU's General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA). Although the 'right to explanation' is not necessarily clear, our desire is to act in good faith by providing local explainability and interpretability between two references, observations, clients, and customers.
 
 This graph solution provides a local classification model interpretability between two observations, which internally we call customers. It uses each customer's estimated probability and fills the gap between the two probabilities with SHAP values that are ordered from higher to lower importance. We prefer SHAP over others (for example, LIME) because of its concrete theory and ability to fairly distribute effects.
 
@@ -16,7 +16,7 @@ Currently, this package only works for tree and tree ensemble classification mod
 
 However, we plan to include the kernel explainer in future versions.
 
-The package requires a tree classifier, training data, validation/test/scoring data with a column titled "Reference", the two observations of interest, and the desired number of important features. The package produces a Waterfall Chart. 
+The package requires a tree classifier, training data, validation/test/scoring data with a column titled 'Reference', the two observations of interest, and the desired number of important features. The package produces a Waterfall Chart. 
 
 **Command**
 
@@ -26,9 +26,18 @@ shapwaterfall(*clf, X_tng, X_val, ref1, ref2, num_features*)
 
 - *clf*: a tree based classifier that is fitted to X_tng, training data.
 - *X_tng*: the training Data Frame used to fit the model.
-- *X_val*: the validation, test, or scoring Data Frame under observation. Note that the data frame must contain an extra column who's label is "Reference".
-- *ref1 and ref2*: the first and second reference, observation, client, or customer under study. Can either be a string or an integer. If the column data is a string, use "ref1" and "ref2. Otherwise, use an integer, such as 4 or 107. 
+- *X_val*: the validation, test, or scoring Data Frame under observation. Note that the data frame must contain an extra column who's label is 'Reference'.
+- *ref1 and ref2*: the first and second reference, observation, client, or customer under study. Can either be a string or an integer. If the column data is a string, use 'ref1' and 'ref2'. Otherwise, use an integer, such as 4 or 107. 
 - *num_features*: the number of important features that describe the local interpretability between to the two observations.
+
+**Important Reminder**
+
+The package users have to take care of the following with respect to the 'Reference' column. Otherwise it could result in errors.
+ 
+- X_tng  should only have the features used while training using  model.fit() without the feature ‘Reference’.
+- X_sc  should have the feature named  ‘Reference’  which is unique identifier for  the scoring data frame and this should not be a feature used in the model training.
+- The features in X_sc  should be in the same order as X_tng. (This is important as I got totally wrong prediction scores when the order was not maintained)
+- ‘ref1’ and ‘ref2’ are values of ‘Reference’ feature used for comparison
 
 **Dependent Packages**
 
@@ -162,9 +171,9 @@ The shapwaterfall package requires the following python packages:
 
 John Halstead, jhalstead@vmware.com
 
-Ravi Prasad K, rkondapalli@vmware.com
-
 Rajesh Vikraman, rvikraman@vmware.com
+
+Ravi Prasad K, rkondapalli@vmware.com
 
 Kiran R, rki@vmware.com
 
