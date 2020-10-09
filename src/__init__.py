@@ -1,1 +1,1 @@
-from src.shapwaterfall import shapwaterfall
+from shapwaterfall.shapwaterfall import shapwaterfall

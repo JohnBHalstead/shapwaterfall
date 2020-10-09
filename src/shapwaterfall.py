@@ -1,4 +1,4 @@
-# v 0.1.4 Oct 1 2020
+# v 0.1.5 Oct 1 2020
 
 import pandas as pd
 import numpy as np
